@@ -126,3 +126,22 @@ sudo nmcli connection down "Wired connection 1" && sudo nmcli connection up "Wir
 3. **`Permission denied` on the shared folder**
    - Issue: Files on the share are owned by the Mac user (UID 501), while the Kali user is UID `[run id -u]`.
    - Workaround: Used `sudo ls -l /mnt/downloads`.
+  
+
+---
+
+## What I Learned
+Through this project, I configured and verified a virtual cybersecurity lab environment on an Apple Silicon Mac:
+1. **NAT vs. Emulated VLAN Routing:** Learned how virtual hypervisors route traffic and adapted VirtualBox NAT Network concepts to UTM's Emulated VLAN architecture.
+2. **Static Network Configuration:** Configured static IPv4 addressing, gateway routing, and manual DNS server overrides in Kali Linux.
+3. **Host-Guest Integration:** Established persistent directory sharing (VirtFS) across different operating system security boundary permissions (UID 501 vs. 1000).
+4. **Baseline Virtual Machine Cloning:** Created clean environment restore points for recovery during future security experiments.
+
+---
+
+## Author & Project Information
+- **Author:** Asal Botirova
+- **Batch:** B084
+- **Program:** Networkwalks Cybersecurity Academy — Week 1 Project
+- **Primary Hypervisor:** UTM (macOS Apple Silicon ARM64)
+- **Guest System:** Kali Linux ARM64
